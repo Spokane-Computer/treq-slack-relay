@@ -1,6 +1,7 @@
 name = "treq-slack-relay"
 main = "src/index.ts"
 compatibility_date = "2025-03-01"
+account_id = "77348b14d74491c036aea99502ddc12f"
 workers_dev = true
 
 [vars]
