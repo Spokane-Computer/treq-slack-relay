@@ -94,7 +94,7 @@ function shouldForward(event: SlackEvent): boolean {
   if (event.subtype && event.subtype !== "file_share") return false;
 
   if (event.type === "app_mention") return true;
-  if (event.type === "message" && (event.channel_type === "im" || event.channel_type === "mpim" || event.channel_type === "group")) return true;
+  if (event.type === "message" && event.channel_type === "im") return true;
   return false;
 }
 
