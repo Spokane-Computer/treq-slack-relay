@@ -1,0 +1,22 @@
+{
+  "name": "treq-slack-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker: Slack @Treq app_mention/DM events → Treq Grok Bot webhook",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "tail": "wrangler tail",
+    "tail:staging": "wrangler tail --env staging"
+  },
+  "dependencies": {
+    "hono": "^4.7.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250317.0",
+    "typescript": "^5.8.2",
+    "wrangler": "^4.14.0"
+  }
+}

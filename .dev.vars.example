@@ -1,0 +1,4 @@
+SLACK_SIGNING_SECRET=your-slack-signing-secret
+GROK_WEBHOOK_URL=https://your-grok-webhook-url
+GROK_WEBHOOK_AUTHORIZATION=Bearer your-webhook-key
+# SLACK_BOT_USER_ID=U0XXXXXXX

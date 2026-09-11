@@ -1,0 +1,17 @@
+name = "treq-slack-relay"
+main = "src/index.ts"
+compatibility_date = "2025-03-01"
+workers_dev = true
+
+[vars]
+# Optional: set after install, e.g. U0XXXX for stripping @Treq mentions
+# SLACK_BOT_USER_ID = ""
+
+# Secrets (wrangler secret put):
+#   SLACK_SIGNING_SECRET
+#   GROK_WEBHOOK_URL
+#   GROK_WEBHOOK_AUTHORIZATION
+
+[env.staging]
+name = "treq-slack-relay-staging"
+workers_dev = true
