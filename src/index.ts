@@ -94,7 +94,7 @@ function shouldForward(event: SlackEvent): boolean {
   if (event.subtype && event.subtype !== "file_share") return false;
 
   if (event.type === "app_mention") return true;
-  if (event.type === "message" && event.channel_type === "im") return true;
+  if (event.type === "message" && (event.channel_type === "im" || event.channel_type === "mpim" || event.channel_type === "group")) return true;
   return false;
 }
 
@@ -102,7 +102,7 @@ async function forwardToGrok(env: Env, envelope: SlackEnvelope, event: SlackEven
   const text = stripBotMention(event.text || "", env.SLACK_BOT_USER_ID);
   const payload = {
     source: "slack",
-    type: event.type === "app_mention" ? "app_mention" : "message.im",
+    type: event.type === "app_mention" ? "app_mention" : (event.channel_type === "mpim" || event.channel_type === "group" ? "message.mpim" : "message.im"),
     event_id: envelope.event_id || null,
     team_id: envelope.team_id || null,
     channel: event.channel || null,
